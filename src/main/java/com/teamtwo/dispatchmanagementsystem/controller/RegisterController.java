@@ -16,7 +16,7 @@ public class RegisterController {
     @PostMapping("/register")
     public void addUser(@RequestBody User user){
         Logger logger = LoggerFactory.getLogger((RegisterController.class));
-        //logger.info("1");
+        logger.info(user.getUsername());
         registerService.add(user);
     }
 }

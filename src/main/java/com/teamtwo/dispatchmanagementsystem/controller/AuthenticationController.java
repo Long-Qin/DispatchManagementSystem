@@ -17,7 +17,7 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
-    @PostMapping("/authenticate/")
+    @PostMapping("/authenticate")
     public Token authenticateGuest(@RequestBody User user) {
         return authenticationService.authenticate(user);
     }
