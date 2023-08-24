@@ -1,6 +1,8 @@
 package com.teamtwo.dispatchmanagementsystem.controller;
 import com.teamtwo.dispatchmanagementsystem.model.User;
 import com.teamtwo.dispatchmanagementsystem.service.RegisterService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,8 +13,10 @@ public class RegisterController {
     public RegisterController(RegisterService registerService) {
         this.registerService = registerService;
     }
-    @PostMapping("/register/")
+    @PostMapping("/register")
     public void addUser(@RequestBody User user){
+        Logger logger = LoggerFactory.getLogger((RegisterController.class));
+        //logger.info("1");
         registerService.add(user);
     }
 }
