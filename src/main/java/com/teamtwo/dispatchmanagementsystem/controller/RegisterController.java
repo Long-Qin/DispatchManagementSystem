@@ -14,9 +14,10 @@ public class RegisterController {
         this.registerService = registerService;
     }
     @PostMapping("/register")
-    public void addUser(@RequestBody User user){
+    public String addUser(@RequestBody User user){
         Logger logger = LoggerFactory.getLogger((RegisterController.class));
         logger.info(user.getUsername());
         registerService.add(user);
+        return "Registration success";
     }
 }
