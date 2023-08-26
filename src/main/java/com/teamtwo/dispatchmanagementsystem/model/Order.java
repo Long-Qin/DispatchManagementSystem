@@ -11,7 +11,7 @@ import com.teamtwo.dispatchmanagementsystem.model.User;
 public class Order {
     @Id
     private String orderID;
-    private String DeliveryOption;
+    private String deliveryOption;
     private String orderStatus;
     private String fromAddress;
     private String toAddress;
@@ -22,7 +22,7 @@ public class Order {
         this.sender = builder.sender;
         this.recipient = builder.recipient;
         this.orderID = builder.orderID;
-        this.DeliveryOption = builder.DeliveryOption;
+        this.deliveryOption = builder.deliveryOption;
         this.orderStatus = builder.orderStatus;
         this.fromAddress = builder.fromAddress;
         this.toAddress = builder.toAddress;
@@ -30,8 +30,8 @@ public class Order {
     static class Builder{
         @JsonProperty("orderID")
         private String orderID;
-        @JsonProperty("DeliveryOption")
-        private String DeliveryOption;
+        @JsonProperty("deliveryOption")
+        private String deliveryOption;
         @JsonProperty("orderStatus")
         private String orderStatus;
         @JsonProperty("fromAddress")
@@ -42,32 +42,32 @@ public class Order {
         private String recipient;
         @JsonProperty("sender")
         private String sender;
-        public Builder orderID(String orderID){
+        public Builder setOrderID(String orderID){
             this.orderID = orderID;
             return this;
         }
-        public Builder DeliveryOption(String DeliveryOption){
-            this.DeliveryOption = DeliveryOption;
+        public Builder setDeliveryOption(String DeliveryOption){
+            this.deliveryOption = DeliveryOption;
             return this;
         }
-        public Builder orderStatus(String orderStatus){
+        public Builder setOrderStatus(String orderStatus){
             this.orderStatus = orderStatus;
             return this;
         }
-        public Builder fromAddress(String fromAddress){
+        public Builder setFromAddress(String fromAddress){
             this.fromAddress = fromAddress;
             return this;
         }
-        public Builder toAddress(String toAddress){
+        public Builder setToAddress(String toAddress){
             this.toAddress = toAddress;
             return this;
         }
 
-        public Builder recipient(String recipient){
+        public Builder setRecipient(String recipient){
             this.recipient = recipient;
             return this;
         }
-        public Builder sender(String sender){
+        public Builder setSender(String sender){
             this.sender = sender;
             return this;
         }
