@@ -16,5 +16,7 @@ public class OrderService {
     public Order add(Order order) {
         return orderRepository.save(order);
     }
-
+    public List<Order> getOrderBySender(String sender){
+        return orderRepository.findBySender(sender);
+    }
 }

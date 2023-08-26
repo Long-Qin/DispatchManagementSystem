@@ -2,6 +2,8 @@ package com.teamtwo.dispatchmanagementsystem.controller;
 
 import com.teamtwo.dispatchmanagementsystem.model.Order;
 import com.teamtwo.dispatchmanagementsystem.service.OrderService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,14 +19,13 @@ public class OrderController {
     public Order getOrder(@PathVariable Long id){
         return null;
     }
-    @GetMapping("/{sender}/sent")
-    public List<Order> getSentOrders(@PathVariable String sender){
-        return null;
+    @GetMapping("/sent")
+    public List<Order> getSentOrders(@RequestParam(name = "sender") String sender){
+        Logger logger = LoggerFactory.getLogger(OrderController.class);
+        logger.info("get sent orders");
+        return orderService.getOrderBySender(sender);
     }
-    @GetMapping("/{receiver}/received")
-    public List<Order> getReceivedOrders(@PathVariable String receiver){
-        return null;
-    }
+
 
     @PostMapping("/add")
     public Long addOrder(@RequestBody Order order){
