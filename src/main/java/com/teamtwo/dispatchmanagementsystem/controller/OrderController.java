@@ -15,12 +15,12 @@ public class OrderController {
     public OrderController(OrderService orderService){
         this.orderService = orderService;
     }
-    @GetMapping("/{id}")
-    public Order getOrder(@PathVariable Long id){
+    @PostMapping("/{id}")
+    public Order getOrder(@PathVariable(name = "id") Long id){
         return null;
     }
-    @GetMapping("/{sender}/sent")
-    public List<Long> getSentOrders(String sender){
+    @GetMapping ("/{sender}/sent")
+    public List<Long> getSentOrders(@PathVariable(name = "sender") String sender){
         return orderService.getOrderBySender(sender);
     }
 
