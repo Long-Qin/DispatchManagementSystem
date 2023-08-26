@@ -19,10 +19,8 @@ public class OrderController {
     public Order getOrder(@PathVariable Long id){
         return null;
     }
-    @GetMapping("/sent")
-    public List<Order> getSentOrders(@RequestParam(name = "sender") String sender){
-        Logger logger = LoggerFactory.getLogger(OrderController.class);
-        logger.info("get sent orders");
+    @GetMapping("/{sender}/sent")
+    public List<Long> getSentOrders(String sender){
         return orderService.getOrderBySender(sender);
     }
 

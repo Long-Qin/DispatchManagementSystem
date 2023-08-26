@@ -16,7 +16,6 @@ public class Order {
     private String orderStatus;
     private String fromAddress;
     private String toAddress;
-    private String recipient;
     private String sender;
     public Order() {}
     public Long getOrderID(){
@@ -24,7 +23,6 @@ public class Order {
     }
     private Order(Builder builder){
         this.sender = builder.sender;
-        this.recipient = builder.recipient;
         this.orderID = builder.orderID;
         this.deliveryOption = builder.deliveryOption;
         this.orderStatus = builder.orderStatus;
@@ -46,8 +44,6 @@ public class Order {
         private String fromAddress;
         @JsonProperty("toAddress")
         private String toAddress;
-        @JsonProperty("recipient")
-        private String recipient;
         @JsonProperty("sender")
         private String sender;
 
@@ -72,10 +68,6 @@ public class Order {
             return this;
         }
 
-        public Builder setRecipient(String recipient){
-            this.recipient = recipient;
-            return this;
-        }
         public Builder setSender(String sender){
             this.sender = sender;
             return this;

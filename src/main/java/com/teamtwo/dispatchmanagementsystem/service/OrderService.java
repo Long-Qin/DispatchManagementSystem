@@ -4,7 +4,9 @@ import com.teamtwo.dispatchmanagementsystem.model.Order;
 import com.teamtwo.dispatchmanagementsystem.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Service
 public class OrderService {
@@ -16,7 +18,7 @@ public class OrderService {
     public Order add(Order order) {
         return orderRepository.save(order);
     }
-    public List<Order> getOrderBySender(String sender){
-        return orderRepository.findBySender(sender);
+    public List<Long> getOrderBySender(String sender){
+        return orderRepository.findIdBySender(sender);
     }
 }
