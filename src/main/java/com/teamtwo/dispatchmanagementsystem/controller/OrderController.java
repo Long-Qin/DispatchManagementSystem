@@ -28,6 +28,7 @@ public class OrderController {
 
     @PostMapping("/add")
     public String addOrder(@RequestBody Order order){
+        orderService.add(order);
         return "add success";
     }
     @PutMapping("/update/{id}")
