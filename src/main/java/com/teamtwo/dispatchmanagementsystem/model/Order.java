@@ -19,6 +19,9 @@ public class Order {
     private String recipient;
     private String sender;
     public Order() {}
+    public Long getOrderID(){
+        return orderID;
+    }
     private Order(Builder builder){
         this.sender = builder.sender;
         this.recipient = builder.recipient;
