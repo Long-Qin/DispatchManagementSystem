@@ -10,7 +10,7 @@ import com.teamtwo.dispatchmanagementsystem.model.User;
 @Table(name = "orders")
 public class Order {
     @Id
-    private String orderID;
+    private Long orderID;
     private String deliveryOption;
     private String orderStatus;
     private String fromAddress;
@@ -29,7 +29,7 @@ public class Order {
     }
     static class Builder{
         @JsonProperty("orderID")
-        private String orderID;
+        private Long orderID;
         @JsonProperty("deliveryOption")
         private String deliveryOption;
         @JsonProperty("orderStatus")
@@ -42,7 +42,7 @@ public class Order {
         private String recipient;
         @JsonProperty("sender")
         private String sender;
-        public Builder setOrderID(String orderID){
+        public Builder setOrderID(Long orderID){
             this.orderID = orderID;
             return this;
         }
