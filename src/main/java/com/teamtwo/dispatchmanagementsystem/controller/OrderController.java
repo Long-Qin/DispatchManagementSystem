@@ -17,11 +17,11 @@ public class OrderController {
     public Order getOrder(@PathVariable Long id){
         return null;
     }
-    @GetMapping("/sent/{sender}")
+    @GetMapping("/{sender}/sent")
     public List<Order> getSentOrders(@PathVariable String sender){
         return null;
     }
-    @GetMapping("/received/{receiver}")
+    @GetMapping("/{receiver}/received")
     public List<Order> getReceivedOrders(@PathVariable String receiver){
         return null;
     }
