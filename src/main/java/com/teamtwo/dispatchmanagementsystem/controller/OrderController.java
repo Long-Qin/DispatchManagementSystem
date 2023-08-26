@@ -13,19 +13,5 @@ public class OrderController {
     public OrderController(OrderService orderService){
         this.orderService = orderService;
     }
-    @GetMapping ("/{id}")
-    public Order getOrderById(@PathVariable String id){
-        return null;
-    }
-    @GetMapping("/sent/{sender}")
-    public List<Order> getOrderBySender(@PathVariable String sender){
-        return null;
-    }
-    @GetMapping("/received/{receiver}")
-    public List<Order> getOrderByReceiver(@PathVariable String receiver){
-        return null;
-    }
-    @PostMapping("/place")
-    public void placeOrder(@RequestParam(name = "order") Order order){
-    }
+
 }
