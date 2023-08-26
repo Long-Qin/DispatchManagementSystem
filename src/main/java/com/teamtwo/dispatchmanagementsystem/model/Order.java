@@ -1,8 +1,6 @@
 package com.teamtwo.dispatchmanagementsystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.teamtwo.dispatchmanagementsystem.model.User;
@@ -10,6 +8,7 @@ import com.teamtwo.dispatchmanagementsystem.model.User;
 @Table(name = "orders")
 public class Order {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderID;
     private String deliveryOption;
     private String orderStatus;
