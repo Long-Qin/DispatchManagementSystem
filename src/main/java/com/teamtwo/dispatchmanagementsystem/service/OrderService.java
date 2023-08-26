@@ -13,8 +13,8 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public void add(Order order) {
-        orderRepository.save(order);
+    public Order add(Order order) {
+        return orderRepository.save(order);
     }
 
 }

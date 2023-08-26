@@ -28,6 +28,10 @@ public class Order {
         this.fromAddress = builder.fromAddress;
         this.toAddress = builder.toAddress;
     }
+
+    public Long getId() {
+        return orderID;
+    }
     static class Builder{
         @JsonProperty("orderID")
         private Long orderID;
@@ -43,6 +47,7 @@ public class Order {
         private String recipient;
         @JsonProperty("sender")
         private String sender;
+
         public Builder setOrderID(Long orderID){
             this.orderID = orderID;
             return this;
