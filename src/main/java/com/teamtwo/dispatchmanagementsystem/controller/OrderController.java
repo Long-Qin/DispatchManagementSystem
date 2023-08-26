@@ -27,9 +27,9 @@ public class OrderController {
     }
 
     @PostMapping("/add")
-    public String addOrder(@RequestBody Order order){
-        orderService.add(order);
-        return "add success";
+    public Long addOrder(@RequestBody Order order){
+        Order newOrder = orderService.add(order);
+        return newOrder.getId();
     }
     @PutMapping("/update/{id}")
     public String updateOrder(@PathVariable Long id, @RequestBody String state){
