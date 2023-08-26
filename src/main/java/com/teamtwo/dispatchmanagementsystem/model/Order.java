@@ -3,12 +3,14 @@ package com.teamtwo.dispatchmanagementsystem.model;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.teamtwo.dispatchmanagementsystem.model.User;
 @Entity
 @Table(name = "orders")
+@JsonDeserialize(builder = Order.Builder.class)
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderID;
     private String deliveryOption;
     private String orderStatus;
