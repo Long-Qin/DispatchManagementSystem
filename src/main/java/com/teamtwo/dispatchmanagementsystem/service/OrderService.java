@@ -1,6 +1,7 @@
 package com.teamtwo.dispatchmanagementsystem.service;
 
 import com.teamtwo.dispatchmanagementsystem.model.Order;
+import com.teamtwo.dispatchmanagementsystem.model.User;
 import com.teamtwo.dispatchmanagementsystem.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +21,9 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Optional<Order> getOrderById(Long id) {
-        return orderRepository.findById(id);
-    }
+//    public Optional<Order> getOrderById(Long id) {
+//        return orderRepository.findById(id);
+//    }
 
     public List<Order> getOrdersBySender(String sender) {
         return orderRepository.findBySender(sender);
@@ -44,5 +45,10 @@ public class OrderService {
             return orderRepository.save(existingOrder);
         }
         return null;
+    }
+
+    public Order getOrderById(Long orderID) {
+        Order order = orderRepository.getOrderById(orderID);
+        return order;
     }
 }
