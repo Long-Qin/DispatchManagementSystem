@@ -30,11 +30,11 @@ public class OrderController {
     public List<Order> getOrdersBySender(@PathVariable String senderId) {
         return orderService.getOrdersBySender(senderId);
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
-        Optional<Order> order = orderService.getOrderById(id);
-        return order.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
+//        Optional<Order> order = orderService.getOrderById(id);
+//        return order.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+//    }
     @DeleteMapping("/{id}")
     public void deleteOrder(@PathVariable Long id) {
         orderService.deleteOrder(id);
@@ -47,5 +47,10 @@ public class OrderController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/{orderID}")
+    public Order getOrderById(@PathVariable Long orderID) {
+        return orderService.getOrderById(orderID);
     }
 }
