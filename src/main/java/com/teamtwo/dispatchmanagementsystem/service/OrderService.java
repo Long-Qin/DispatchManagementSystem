@@ -15,10 +15,10 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public Order add(Order order) {
-        return orderRepository.save(order);
+    public Long add(Order order) {
+        return orderRepository.save(order).getOrderID();
     }
-    public List<Long> getOrderBySender(String sender){
-        return orderRepository.findIdBySender(sender);
+    public List<Order> getOrderBySender(String sender){
+        return orderRepository.findBySender(sender);
     }
 }

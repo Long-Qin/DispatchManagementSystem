@@ -15,20 +15,19 @@ public class OrderController {
     public OrderController(OrderService orderService){
         this.orderService = orderService;
     }
-    @PostMapping("/{id}")
+    @GetMapping ("/{id}")
     public Order getOrder(@PathVariable(name = "id") Long id){
         return null;
     }
     @GetMapping ("/{sender}/sent")
-    public List<Long> getSentOrders(@PathVariable(name = "sender") String sender){
+    public List<Order> getSentOrders(@PathVariable(name = "sender") String sender){
         return orderService.getOrderBySender(sender);
     }
 
 
     @PostMapping("/add")
     public Long addOrder(@RequestBody Order order){
-        Order newOrder = orderService.add(order);
-        return newOrder.getId();
+        return orderService.add(order);
     }
     @PutMapping("/update/{id}")
     public String updateOrder(@PathVariable Long id, @RequestBody String state){
