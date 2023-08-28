@@ -19,12 +19,9 @@ public class Order {
 
     private String sender;
     public Order() {}
-<<<<<<< HEAD
-=======
     public Long getOrderID(){
         return orderID;
     }
->>>>>>> parent of 5d7dae9 (Ordering (#9))
     private Order(Builder builder){
         this.sender = builder.sender;
         this.orderID = builder.orderID;
@@ -33,8 +30,7 @@ public class Order {
         this.fromAddress = builder.fromAddress;
         this.toAddress = builder.toAddress;
     }
-<<<<<<< HEAD
-
+    
     public Long getId() {
         return orderID;
     }
@@ -58,12 +54,7 @@ public class Order {
     public String getSender() { return sender; }
     public void setSender(String sender) { this.sender = sender; }
 
-=======
->>>>>>> parent of 5d7dae9 (Ordering (#9))
-
-    public Long getId() {
-        return orderID;
-    }
+    @Override
     static class Builder{
         @JsonProperty("orderID")
         private Long orderID;
