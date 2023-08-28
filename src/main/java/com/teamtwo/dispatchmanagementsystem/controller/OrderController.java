@@ -4,20 +4,27 @@ import com.teamtwo.dispatchmanagementsystem.model.Order;
 import com.teamtwo.dispatchmanagementsystem.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/orders")
 public class OrderController {
-    private final OrderService orderService;
-    public OrderController(OrderService orderService){
-        this.orderService = orderService;
+
+    @Autowired
+    private OrderService orderService;
+
+    @PostMapping
+    public Order createOrder(@RequestBody Order order) {
+        return orderService.saveOrder(order);
     }
-    @PostMapping("/{id}")
-    public Order getOrder(@PathVariable(name = "id") Long id){
-        return null;
+    @GetMapping
+    public List<Order> getAllOrders() {
+        return orderService.getAllOrders();
     }
     @GetMapping("/sender/{senderId}")
     public List<Order> getOrdersBySender(@PathVariable String senderId) {
@@ -41,5 +48,4 @@ public class OrderController {
             return ResponseEntity.notFound().build();
         }
     }
-
 }
