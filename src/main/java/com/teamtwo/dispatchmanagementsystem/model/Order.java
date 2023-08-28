@@ -29,6 +29,8 @@ public class Order {
         this.toAddress = builder.toAddress;
     }
 
+
+
     public Long getId() {
         return orderID;
     }
@@ -46,10 +48,6 @@ public class Order {
     }
     public String getSender() {
         return sender;
-    }
-
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
     }
 
     static class Builder{
