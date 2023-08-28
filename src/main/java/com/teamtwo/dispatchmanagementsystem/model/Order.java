@@ -19,41 +19,28 @@ public class Order {
 
     private String sender;
     public Order() {}
-    public Long getOrderID(){
+    public Long getId() {
         return orderID;
     }
-    public String getDeliveryOption(){
+
+    public String getDeliveryOption() {
         return deliveryOption;
     }
-    public String getOrderStatus(){
+
+    public String getOrderStatus() {
         return orderStatus;
     }
-    public String getFromAddress(){
+
+    public String getFromAddress() {
         return fromAddress;
     }
-    public String getToAddress(){
+
+    public String getToAddress() {
         return toAddress;
     }
-    public String getSender(){
+
+    public String getSender() {
         return sender;
-    }
-    public void setOrderID(Long orderID){
-        this.orderID = orderID;
-    }
-    public void setDeliveryOption(String deliveryOption){
-        this.deliveryOption = deliveryOption;
-    }
-    public void setOrderStatus(String orderStatus){
-        this.orderStatus = orderStatus;
-    }
-    public void setFromAddress(String fromAddress){
-        this.fromAddress = fromAddress;
-    }
-    public void setToAddress(String toAddress){
-        this.toAddress = toAddress;
-    }
-    public void setSender(String sender){
-        this.sender = sender;
     }
 
     private Order(Builder builder){
@@ -64,11 +51,11 @@ public class Order {
         this.fromAddress = builder.fromAddress;
         this.toAddress = builder.toAddress;
     }
-
-
-
-    public Long getId() {
-        return orderID;
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 
     static class Builder{
