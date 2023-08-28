@@ -34,6 +34,11 @@ public class Order {
     public Long getId() {
         return orderID;
     }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
     static class Builder{
         @JsonProperty("orderID")
         private Long orderID;
