@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
-    @Query("SELECT orderID FROM Order WHERE sender = :sender")
-    List<Long> findIdBySender(String sender);
+    //@Query(value = "SELECT * FROM orders WHERE sender = sender", nativeQuery = true)
     List<Order> findBySender(String sender);
 }

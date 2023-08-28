@@ -22,6 +22,40 @@ public class Order {
     public Long getOrderID(){
         return orderID;
     }
+    public String getDeliveryOption(){
+        return deliveryOption;
+    }
+    public String getOrderStatus(){
+        return orderStatus;
+    }
+    public String getFromAddress(){
+        return fromAddress;
+    }
+    public String getToAddress(){
+        return toAddress;
+    }
+    public String getSender(){
+        return sender;
+    }
+    public void setOrderID(Long orderID){
+        this.orderID = orderID;
+    }
+    public void setDeliveryOption(String deliveryOption){
+        this.deliveryOption = deliveryOption;
+    }
+    public void setOrderStatus(String orderStatus){
+        this.orderStatus = orderStatus;
+    }
+    public void setFromAddress(String fromAddress){
+        this.fromAddress = fromAddress;
+    }
+    public void setToAddress(String toAddress){
+        this.toAddress = toAddress;
+    }
+    public void setSender(String sender){
+        this.sender = sender;
+    }
+
     private Order(Builder builder){
         this.sender = builder.sender;
         this.orderID = builder.orderID;
